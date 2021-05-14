@@ -88,7 +88,7 @@ namespace divisionDeGrupos
                     if (exceptions.Count == numberOfGroups)
                     {
                         exceptions.Clear();
-                        numberOfGroups++;
+                        maxGroupMembers++;
                     }
 
                     groupNumber = RandomNumWithExceptions(0, numberOfGroups, exceptions);
