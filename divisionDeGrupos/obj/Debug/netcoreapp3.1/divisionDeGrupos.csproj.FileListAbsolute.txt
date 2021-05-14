@@ -11,3 +11,16 @@ C:\Users\Lenovo\Desktop\tendencia de desarrollo\divisionDeGrupos\bin\Debug\netco
 C:\Users\Lenovo\Desktop\tendencia de desarrollo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.dll
 C:\Users\Lenovo\Desktop\tendencia de desarrollo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.pdb
 C:\Users\Lenovo\Desktop\tendencia de desarrollo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.genruntimeconfig.cache
+C:\Users\Samuel\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.csprojAssemblyReference.cache
+C:\Users\Samuel\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.AssemblyInfoInputs.cache
+C:\Users\Samuel\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.AssemblyInfo.cs
+C:\Users\Samuel\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.dll
+C:\Users\Samuel\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.pdb
+C:\Users\Samuel\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.exe
+C:\Users\Samuel\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.deps.json
+C:\Users\Samuel\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.runtimeconfig.json
+C:\Users\Samuel\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.runtimeconfig.dev.json
+C:\Users\Samuel\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.dll
+C:\Users\Samuel\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.pdb
+C:\Users\Samuel\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.genruntimeconfig.cache
