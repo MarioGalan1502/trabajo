@@ -9,29 +9,82 @@ namespace divisionDeGrupos
 {
     public class GroupManager
     {
+        //metodo sacar numeros random (rango especificado) que
+        private int RandomNumWithExceptions(int inicio, int final, List<int> exceptions)
+        {
+            IEnumerable<int> range;
+
+            if (exceptions == null)
+            {
+                range = Enumerable.Range(inicio, final);
+            }
+            else
+            {
+                range = Enumerable.Range(inicio, final).Where(i => !exceptions.Contains(i));
+            }
+
+            var rand = new System.Random();
+            int index = rand.Next(inicio, final - exceptions.Count);
+            return range.ElementAt(index);
+        }
         public List<string> GetFileList(string directory)
         {
             string[] fileList = File.ReadAllLines(directory);
-            
+
 
             return new List<string>(fileList);
 
         }
         //do {numero = random()} while(numero == x || numero == y)
-        public string[][] randomizeInGroups(List<string> elements, int numberOfGroups)
+
+        //metodo para dividir de manera random 
+        private List<string>[] RandomizeGroups(List<string> elements, int numberOfGroups)
         {
-            Random random = new Random();
-            int indexElement = random.Next(elements.Length);
-            
-            
+            int maxGroupMembers = elements.Count / numberOfGroups;
+            List<string>[] groups = new List<string>[numberOfGroups];
+            List<int> exceptions = new List<int>();
+            while (elements.Count > 0)
+            {
+                int elementIndex = RandomNumWithExceptions(0, elements.Count - 1, null);
+
+                string elementString = elements[elementIndex];
+
+                elements.RemoveAt(elementIndex);
+                int groupNumber = RandomNumWithExceptions(0, numberOfGroups - 1, null);
+                if (groups[groupNumber].Count == maxGroupMembers && exceptions.Count != numberOfGroups)
+                {
+                    exceptions.Add(groupNumber);
+                    groupNumber = RandomNumWithExceptions(0, numberOfGroups - 1, exceptions);
+                }
+
+                groups[groupNumber].Add(elementString);
+
+            }
+            return groups;
             //bucle (mientras haya elementos en la lista)
             // Generar num random de 0 a length (tiene que ser ajustado cada vez al length actual)
             // tomar elemento en indice generado por random
             // Borrarlo de la lista inicial
             //Generar num random de 0 a numberOfGroups
-            //Chequear si arreglo de indice numero random esta lleno, si lo esta, generar nuevo numero hasta que no este lleno.
+            //Chequear si arreglo de indice numero random esta lleno, si lo esta, llamar a funcion del random hasta que el grupo no este lleno
             //Insertar elemento en el arreglo de indice numero random
-            
+        }
+        public string[][] GetRandomizedGroups(List<string> elements, int numberOfGroups)
+        {
+            Random random = new Random();
+            int indexElement = random.Next(elements.Count);
+            int numeroDeIntegrantesPorGrupo = elements.Count / numberOfGroups;
+            int remanente = elements.Count % numberOfGroups;
+
+
+
+            //RandomizeGroups()
+
+            //Condicion de remanente (remanente > 0)
+            //numeroDeIntegrantesPorGrupo++
+            //randomizeGroups()
+
+
 
         }
 
