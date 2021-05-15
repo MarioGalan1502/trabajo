@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj": {}
+    "C:\\Users\\Samuel\\Desktop\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {
+    "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
         "projectName": "divisionDeGrupos",
-        "projectPath": "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
-        "packagesPath": "C:\\Users\\jonaa\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\divisionDeGrupos\\obj\\",
+        "projectPath": "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
+        "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jonaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Samuel\\Downloads\\pastel-master": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,21 +59,17 @@
         }
       }
     },
-    "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj": {
+    "C:\\Users\\Samuel\\Desktop\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj",
         "projectName": "TestDivisionDeGrupos",
-        "projectPath": "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj",
-        "packagesPath": "C:\\Users\\jonaa\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\TestDivisionDeGrupos\\obj\\",
+        "projectPath": "C:\\Users\\Samuel\\Desktop\\trabajo\\TestDivisionDeGrupos\\TestDivisionDeGrupos.csproj",
+        "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Samuel\\Desktop\\trabajo\\TestDivisionDeGrupos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jonaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,14 +77,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Samuel\\Downloads\\pastel-master": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {
-                "projectPath": "D:\\Users\\Jonaa\\Documents\\INTEC\\Trimestre#8\\Tendencias en Desarrollo de Aplicaciones\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj"
+              "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj"
               }
             }
           }
