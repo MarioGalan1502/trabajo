@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Samuel\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {}
+    "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Samuel\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {
+    "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
         "projectName": "divisionDeGrupos",
-        "projectPath": "C:\\Users\\Samuel\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
+        "projectPath": "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\divisionDeGrupos.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\trabajo\\divisionDeGrupos\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",

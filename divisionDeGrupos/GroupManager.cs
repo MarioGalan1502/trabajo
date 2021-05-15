@@ -120,6 +120,36 @@ namespace divisionDeGrupos
             //Chequear si arreglo de indice numero random esta lleno, si lo esta, llamar a funcion del random hasta que el grupo no este lleno
             //Insertar elemento en el arreglo de indice numero random
         }
+        public Group[] GetRandomizedGroups(List<string> students, List<string> subjects, int numberOfGroups)
+        {
+            List<string>[] arrangedStudents = RandomizeGroups(students, numberOfGroups);
+            //List<string>[] arrangedSubjects = RandomizeGroups(subjects, numberOfGroups);
+            Group[] arrangedGroups = new Group[numberOfGroups];
+
+            for (int i = 0; i < arrangedGroups.Length; i++)
+            {
+                arrangedGroups[i] = new Group();
+
+                arrangedGroups[i].Number = i + 1;
+                arrangedGroups[i].Students = arrangedStudents[i].ToArray();
+                // arrangedGroups[i].Subjects = arrangedSubjects[i].ToArray();
+            }
+            Console.WriteLine("hola");
+            return arrangedGroups;
+
+            // Random random = new Random();
+            // int indexElement = random.Next(elements.Count);
+            // int numeroDeIntegrantesPorGrupo = elements.Count / numberOfGroups;
+            // int remanente = elements.Count % numberOfGroups;
+
+
+            // RandomizeGroups(elements, numberOfGroups);
+
+            //Condicion de remanente (remanente > 0)
+            //numeroDeIntegrantesPorGrupo++
+            //randomizeGroups()
+        }
+
         // private string[][] GetRandomizedGroups(List<string> elements, int numberOfGroups)
         // {
         //     Random random = new Random();
