@@ -161,6 +161,8 @@ namespace TestDivisionDeGrupos
 
             int[][] studentGroupAppearancesCount = new int[students.Count][];
 
+
+
             for (int i = 0; i < listasDeListasGrupos.Length; i++)
             {
                 if (studentsStack.Count == 0)
@@ -189,6 +191,7 @@ namespace TestDivisionDeGrupos
                 for (int i = 0; i < countAppearance.Length; i++)
                 {
                     int countOfCurrentGroup = countAppearance[i];
+
                     if (countOfCurrentGroup / numTests > probabilty)
                     {
                         Assert.Fail();
