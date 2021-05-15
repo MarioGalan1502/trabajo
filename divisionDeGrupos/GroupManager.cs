@@ -9,6 +9,18 @@ namespace divisionDeGrupos
 {
     public class GroupManager
     {
+        private bool ArrContains(int[] arr, int numberToFind)
+        {
+            foreach (int num in arr)
+            {
+                if (num == numberToFind)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         //metodo sacar numeros random (rango especificado) que
         public int RandomNumWithExceptions(int inicio, int final, List<int> exceptions)
         {
@@ -73,29 +85,32 @@ namespace divisionDeGrupos
                 string elementString = elements[elementIndex];
 
                 elements.RemoveAt(elementIndex);
-                int groupNumber = RandomNumWithExceptions(0, numberOfGroups, null);
+                int groupNumber = RandomNumWithExceptions(0, numberOfGroups, exceptions);
+
+                groups[groupNumber].Add(elementString);
 
                 if (groups[groupNumber].Count == maxGroupMembers)
                 {
+                    exceptions.Add(groupNumber);
 
                     if (exceptions.Count == numberOfGroups)
                     {
                         exceptions.Clear();
                         maxGroupMembers++;
                     }
-                    groupNumber = RandomNumWithExceptions(0, numberOfGroups, exceptions);
-                    groups[groupNumber].Add(elementString);
+                    // groupNumber = RandomNumWithExceptions(0, numberOfGroups, exceptions.ToArray());
+
 
                 }
-                else
-                {
-                    groups[groupNumber].Add(elementString);
-                }
+                // else
+                // {
+                //     groups[groupNumber].Add(elementString);
+                // }
 
-                if (groups[groupNumber].Count == maxGroupMembers)
-                {
-                    exceptions.Add(groupNumber);
-                }
+                // if (groups[groupNumber].Count == maxGroupMembers)
+                // {
+                //     exceptions.Add(groupNumber);
+                // }
             }
             return groups;
             //bucle (mientras haya elementos en la lista)
