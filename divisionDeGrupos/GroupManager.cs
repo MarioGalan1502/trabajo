@@ -50,10 +50,7 @@ namespace divisionDeGrupos
         public List<string> GetFileList(string directory)
         {
             string[] fileList = File.ReadAllLines(directory);
-
-
             return new List<string>(fileList);
-
         }
 
         //metodo para dividir de manera random 
@@ -86,7 +83,6 @@ namespace divisionDeGrupos
                         exceptions.Clear();
                         maxGroupMembers++;
                     }
-
                     groupNumber = RandomNumWithExceptions(0, numberOfGroups, exceptions);
                     groups[groupNumber].Add(elementString);
 
@@ -124,7 +120,7 @@ namespace divisionDeGrupos
                 arrangedGroups[i].Students = arrangedStudents[i].ToArray();
                 arrangedGroups[i].Subjects = arrangedSubjects[i].ToArray();
             }
-            Console.WriteLine("\nBienvenido, aqui esta su division de grupo\n");
+
             return arrangedGroups;
 
             // Random random = new Random();
