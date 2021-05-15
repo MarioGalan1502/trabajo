@@ -9,25 +9,14 @@ namespace divisionDeGrupos
 {
     public class GroupManager
     {
-        private bool ArrContains(int[] arr, int numberToFind)
-        {
-            foreach (int num in arr)
-            {
-                if (num == numberToFind)
-                {
-                    return true;
-                }
-            }
 
-            return false;
-        }
         //metodo sacar numeros random (rango especificado) que
         public int RandomNumWithExceptions(int inicio, int final, List<int> exceptions)
         {
             int randomIndex = 0;
             var rand = new Random();
 
-            if (exceptions == null)
+            if (exceptions == null || exceptions.Count == 0)
             {
                 return rand.Next(inicio, final);
             }
@@ -98,19 +87,10 @@ namespace divisionDeGrupos
                         exceptions.Clear();
                         maxGroupMembers++;
                     }
-                    // groupNumber = RandomNumWithExceptions(0, numberOfGroups, exceptions.ToArray());
 
 
                 }
-                // else
-                // {
-                //     groups[groupNumber].Add(elementString);
-                // }
 
-                // if (groups[groupNumber].Count == maxGroupMembers)
-                // {
-                //     exceptions.Add(groupNumber);
-                // }
             }
             return groups;
             //bucle (mientras haya elementos en la lista)
