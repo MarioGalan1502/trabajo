@@ -16,7 +16,7 @@ namespace divisionDeGrupos
 
         public void Print()
         {
-
+            Console.WriteLine("---------------------------------------------------");
             Console.Write($"Grupo: {Number}");
             Console.Write("  Temas: ");
             for (int i = 0; i < Subjects.Length; i++)
@@ -28,7 +28,6 @@ namespace divisionDeGrupos
             {
                 Console.WriteLine($"{Students[i]}");
             }
-            Console.WriteLine(" ");
         }
     }
 }

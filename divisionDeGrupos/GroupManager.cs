@@ -9,8 +9,12 @@ namespace divisionDeGrupos
 {
     public class GroupManager
     {
+<<<<<<< HEAD
 
         //metodo sacar numeros random (rango especificado) que
+=======
+        //Metodo sacar numeros random (rango especificado)
+>>>>>>> 5e74942e4fa434795312b2efe21761c901c0aec0
         public int RandomNumWithExceptions(int inicio, int final, List<int> exceptions)
         {
             int randomIndex = 0;
@@ -30,31 +34,15 @@ namespace divisionDeGrupos
             }
 
             return randomIndex;
-            // IEnumerable<int> range;
-            // int exceptionsCount = exceptions == null ? 0 : exceptions.Count;
-
-            // if (exceptions == null)
-            // {
-            //     range = Enumerable.Range(inicio, final);
-            // }
-            // else
-            // {
-            //     range = Enumerable.Range(inicio, final).Where(i => !exceptions.Contains(i));
-            // }
-
-            // var rand = new Random();
-            // //[0,3,4
-            // //
-            // int index = rand.Next(inicio, final - exceptionsCount);
-            // return range.ElementAt(index);
         }
+
         public List<string> GetFileList(string directory)
         {
             string[] fileList = File.ReadAllLines(directory);
             return new List<string>(fileList);
         }
 
-        //metodo para dividir de manera random 
+        //Metodo para dividir de manera random 
         public List<string>[] RandomizeGroups(List<string> elements, int numberOfGroups)
         {
             int maxGroupMembers = elements.Count / numberOfGroups;
@@ -101,6 +89,8 @@ namespace divisionDeGrupos
             //Chequear si arreglo de indice numero random esta lleno, si lo esta, llamar a funcion del random hasta que el grupo no este lleno
             //Insertar elemento en el arreglo de indice numero random
         }
+
+        //Retorna un arreglo con las listas de estudiantes y temas ya randomizados
         public Group[] GetRandomizedGroups(List<string> students, List<string> subjects, int numberOfGroups)
         {
             List<string>[] arrangedStudents = RandomizeGroups(students, numberOfGroups);
@@ -117,31 +107,6 @@ namespace divisionDeGrupos
             }
 
             return arrangedGroups;
-
-            // Random random = new Random();
-            // int indexElement = random.Next(elements.Count);
-            // int numeroDeIntegrantesPorGrupo = elements.Count / numberOfGroups;
-            // int remanente = elements.Count % numberOfGroups;
-
-
-            // RandomizeGroups(elements, numberOfGroups);
-
-            //Condicion de remanente (remanente > 0)
-            //numeroDeIntegrantesPorGrupo++
-            //randomizeGroups()
         }
-
-        //getDistributionGroups(List<string> estudiantes, list temas) : List<Group>
-        // Group -> {estudiantes, temas}
-        // Input: Lista de estudiantes, lista de temas, el numero de grupos
-        // Asignar estudiantes a x grupos random
-        //Asignar temas a x grupos random
-        // Output: [{},{},{}]
-        //class Grupo { property estudiantes, temas}
-        // List<Grupo>
-        //Lista de arreglos de grupos: [ {hd, dh,ndj,jd}, {hs,hsy,shs,js}, {}, {}, {}]
-        //Lista de arreglos de grupos: [ {tema 1}, {tema2}, {}, {}, {}]
-        //Output: Lista[0]
-
     }
 }
