@@ -37,3 +37,16 @@ C:\Users\Samuel\Desktop\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisio
 C:\Users\Samuel\Desktop\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.dll
 C:\Users\Samuel\Desktop\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.pdb
 C:\Users\Samuel\Desktop\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.genruntimeconfig.cache
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.exe
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.deps.json
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.runtimeconfig.json
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.runtimeconfig.dev.json
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.dll
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\bin\Debug\netcoreapp3.1\divisionDeGrupos.pdb
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.csprojAssemblyReference.cache
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.AssemblyInfoInputs.cache
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.AssemblyInfo.cs
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.csproj.CoreCompileInputs.cache
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.dll
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.pdb
+D:\Users\Jonaa\Documents\INTEC\Trimestre#8\Tendencias en Desarrollo de Aplicaciones\trabajo\divisionDeGrupos\obj\Debug\netcoreapp3.1\divisionDeGrupos.genruntimeconfig.cache
