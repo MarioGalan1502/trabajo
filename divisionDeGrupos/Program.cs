@@ -9,95 +9,36 @@ namespace divisionDeGrupos
     {
         static void Main(string[] args)
         {
-            GroupManager manager = new GroupManager();
+            Console.WriteLine("\nBienvenido, aqui esta su division de grupo\n");
 
+            int groups = int.Parse(args[0]);
+            string pathEst = args[1], pathTemas = args[2];
 
-
-            List<string> elements = new List<string>()
+            try
             {
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "16",
-                "17",
-                "18"
-            };
+                string[] students = System.IO.File.ReadAllLines(pathEst); //guardar lineas del archivo a un array (por lineas)
+                string[] subjects = System.IO.File.ReadAllLines(pathTemas);
 
-            int numberOfGroups = 5;
 
-            List<string>[] groups = manager.RandomizeGroups(elements, numberOfGroups);
+                List<string> studentList = new List<string>(students);
+                List<string> subjectsList = new List<string>(subjects);
 
-            foreach (var group in groups)
-            {
-                Console.WriteLine($"Grupo");
-                for (int i = 0; i < group.Count; i++)
+                GroupManager manager = new GroupManager();
+
+                Group[] arrangedGroups = manager.GetRandomizedGroups(studentList, subjectsList, groups);
+
+                foreach (var group in arrangedGroups)
                 {
-
-                    Console.WriteLine(group[i]);
+                    group.Print();
                 }
+
             }
-            // int groups = int.Parse(args[0]);
-            // string pathEst = args[1], pathTemas = args[2];
-
-            // try
-            // {
-            //     string[] students = System.IO.File.ReadAllLines(pathEst); //guardar lineas del archivo a un array (por lineas)
-            //     string[] subjects = System.IO.File.ReadAllLines(pathTemas);
-
-
-            //     List<string> studentList = new List<string>(students);
-            //     List<string> subjectsList = new List<string>(subjects);
-
-            // foreach (string item in studentList)
-            // {
-            //     Console.WriteLine(item);
-            // }
-
-            // foreach (string item in subjectsList)
-            // {
-            //     Console.WriteLine(item);
-            // }
-
-            //     int nStudents = students.Length; // 10 estudiantes, 5 grupos
-
-
-            //     int estudiantesPorGrupo = nStudents / groups;
-            //     int rem = nStudents % groups;
-
-            //     // 2 estudiantes por grupo
-            //     //Seleccionar estudiante aleatorio del arreglo
-            //     //Asignarle un grupo
-            //     //Eliminarlo del arreglo
-
-            //     // if (rem != 0)
-            //     // {
-
-            //     // }
-
-
-            // }
-            // catch (Exception e)
-            // {
-            //     // Console.WriteLine("Wrong format!!\nThe correct format is --> Ej: 5 C:/User1/Desktop/StudentsFile/students.txt C:/User/Desktop/Groups/groups.txt\nAlso the filn");
-            //     Console.WriteLine(e);
-            //     throw;
-            // }
-
-
+            catch (Exception e)
+            {
+                Console.WriteLine("Wrong format!!\nThe correct format is --> Ej: 5 C:/User1/Desktop/StudentsFile/students.txt C:/User/Desktop/Groups/groups.txt\nAlso the filn");
+                Console.WriteLine(e);
+                throw;
+            }
         }
-
-
     }
 }

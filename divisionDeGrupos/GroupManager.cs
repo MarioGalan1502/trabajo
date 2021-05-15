@@ -28,7 +28,6 @@ namespace divisionDeGrupos
                 while (exceptions.Contains(randomIndex));
             }
 
-
             return randomIndex;
             // IEnumerable<int> range;
             // int exceptionsCount = exceptions == null ? 0 : exceptions.Count;
@@ -56,7 +55,6 @@ namespace divisionDeGrupos
             return new List<string>(fileList);
 
         }
-        //do {numero = random()} while(numero == x || numero == y)
 
         //metodo para dividir de manera random 
         public List<string>[] RandomizeGroups(List<string> elements, int numberOfGroups)
@@ -79,9 +77,7 @@ namespace divisionDeGrupos
 
                 elements.RemoveAt(elementIndex);
                 int groupNumber = RandomNumWithExceptions(0, numberOfGroups, null);
-                //<3,3,3,2,3>
 
-                //1
                 if (groups[groupNumber].Count == maxGroupMembers)
                 {
 
@@ -98,18 +94,12 @@ namespace divisionDeGrupos
                 else
                 {
                     groups[groupNumber].Add(elementString);
-
-
                 }
 
                 if (groups[groupNumber].Count == maxGroupMembers)
                 {
                     exceptions.Add(groupNumber);
                 }
-
-
-
-
             }
             return groups;
             //bucle (mientras haya elementos en la lista)
@@ -123,7 +113,7 @@ namespace divisionDeGrupos
         public Group[] GetRandomizedGroups(List<string> students, List<string> subjects, int numberOfGroups)
         {
             List<string>[] arrangedStudents = RandomizeGroups(students, numberOfGroups);
-            //List<string>[] arrangedSubjects = RandomizeGroups(subjects, numberOfGroups);
+            List<string>[] arrangedSubjects = RandomizeGroups(subjects, numberOfGroups);
             Group[] arrangedGroups = new Group[numberOfGroups];
 
             for (int i = 0; i < arrangedGroups.Length; i++)
@@ -132,9 +122,9 @@ namespace divisionDeGrupos
 
                 arrangedGroups[i].Number = i + 1;
                 arrangedGroups[i].Students = arrangedStudents[i].ToArray();
-                // arrangedGroups[i].Subjects = arrangedSubjects[i].ToArray();
+                arrangedGroups[i].Subjects = arrangedSubjects[i].ToArray();
             }
-            Console.WriteLine("hola");
+            Console.WriteLine("\nBienvenido, aqui esta su division de grupo\n");
             return arrangedGroups;
 
             // Random random = new Random();
@@ -149,24 +139,6 @@ namespace divisionDeGrupos
             //numeroDeIntegrantesPorGrupo++
             //randomizeGroups()
         }
-
-        // private string[][] GetRandomizedGroups(List<string> elements, int numberOfGroups)
-        // {
-        //     Random random = new Random();
-        //     int indexElement = random.Next(elements.Count);
-        //     int numeroDeIntegrantesPorGrupo = elements.Count / numberOfGroups;
-        //     int remanente = elements.Count % numberOfGroups;
-
-
-        //     RandomizeGroups(elements, numberOfGroups);
-
-        //     //Condicion de remanente (remanente > 0)
-        //     //numeroDeIntegrantesPorGrupo++
-        //     //randomizeGroups()
-
-
-
-        // }
 
         //getDistributionGroups(List<string> estudiantes, list temas) : List<Group>
         // Group -> {estudiantes, temas}

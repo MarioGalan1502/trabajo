@@ -3,3 +3,6 @@ politica
 arte
 juegos
 comida
+astronomia
+c#
+java
