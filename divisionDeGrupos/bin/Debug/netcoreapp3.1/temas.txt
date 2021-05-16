@@ -3,3 +3,7 @@ politica
 arte
 juegos
 comida
+Julia
+C#
+java
+Adios

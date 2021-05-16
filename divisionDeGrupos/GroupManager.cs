@@ -9,12 +9,10 @@ namespace divisionDeGrupos
 {
     public class GroupManager
     {
-<<<<<<< HEAD
-
         //metodo sacar numeros random (rango especificado) que
-=======
+
         //Metodo sacar numeros random (rango especificado)
->>>>>>> 5e74942e4fa434795312b2efe21761c901c0aec0
+
         public int RandomNumWithExceptions(int inicio, int final, List<int> exceptions)
         {
             int randomIndex = 0;
@@ -75,10 +73,7 @@ namespace divisionDeGrupos
                         exceptions.Clear();
                         maxGroupMembers++;
                     }
-
-
                 }
-
             }
             return groups;
             //bucle (mientras haya elementos en la lista)
@@ -93,6 +88,18 @@ namespace divisionDeGrupos
         //Retorna un arreglo con las listas de estudiantes y temas ya randomizados
         public Group[] GetRandomizedGroups(List<string> students, List<string> subjects, int numberOfGroups)
         {
+
+            if (students is null || subjects is null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (numberOfGroups > students.Count || numberOfGroups > subjects.Count)
+            {
+                throw new ArgumentException("La cantidad de grupos no puede ser mayor que la cantidad de estudiantes o de temas");
+            }
+
+
             List<string>[] arrangedStudents = RandomizeGroups(students, numberOfGroups);
             List<string>[] arrangedSubjects = RandomizeGroups(subjects, numberOfGroups);
             Group[] arrangedGroups = new Group[numberOfGroups];

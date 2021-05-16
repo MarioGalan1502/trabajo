@@ -3,6 +3,7 @@ using divisionDeGrupos;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System;
 
 
 namespace TestDivisionDeGrupos
@@ -10,6 +11,7 @@ namespace TestDivisionDeGrupos
     public class GroupManagerTest
     {
         public List<string> students { get; set; }
+        public List<string> subjects { get; set; }
 
         private Group[][] group(int numberOfGroups, int numOfTests)
         {
@@ -29,186 +31,147 @@ namespace TestDivisionDeGrupos
         [SetUp]
         public void Setup()
         {
-            students = new List<string>() { "Jonathan", "Mario", "Samuel", "Emily", "Lorenzo :c", "Alan" };
+            students = new List<string>() { "Jonathan", "Mario", "Samuel", "Emily", "Lorenzo", "Alan" };
+            subjects = new List<string>() { "c#", "java", "python", "c++", "ruby" };
         }
 
-        /*
-            Datos estaticos:
-            20 estudiantes
-            5 temas
-            5 grupos
-
-            Hacer 20 tests y calcular:
-
-            Constante de desviacion estandar: +- 0.002
-
-            1- Numero de veces que cada estudiante le toca cada grupo:
-            -Calcular la probabilidad de que un estudiante caiga en un grupo (1/cantOfGroups)
-
-            Se hacen 20 tests:
-
-            En este caso cada estudiante tiene 1/5 probabilidad de caer en cada grupo.
-
-            En teoria
-
-            Estudiante: Julio Perez
-
-            Grupo 1: 5 veces cayo Julio en este grupo   Estudiantes
-            Grupo 2: 5 veces
-            Grupo 3: 4 veces
-            Grupo 4: 4 veces
-            Grupo 5: 2 veces
+        [Test]
+        public void GroupManager_NumbersOfGroups_HigherThan_Students()
+        {
+            GroupManager manager = new GroupManager();
 
 
-            Luego de contar todas estas veces:
-            Se calcula la frecuencia relativa de Julio Perez en cada grupo o sea:
-            Grupo 1: 5/20= 1/4 falso 
-            Grupo 2: 5/20 = 1/4
-            Grupo 3: 4/20 = 1/5
-            Grupo 4: 4/20 = 1/5
-            Grupo 5: 2/20 = 1/10
+            Assert.That(() => manager.GetRandomizedGroups(students, subjects, 300), Throws.ArgumentException.And.Message.EqualTo("La cantidad de grupos no puede ser mayor que la cantidad de estudiantes o de temas"));
+        }
 
+        [Test]
+        public void GroupManager_NumbersOfGroups_HigherThan_Subjects()
+        {
+            GroupManager manager = new GroupManager();
 
-
-            Cada probabilidad debe ser menor o igual a 1/5, la probabilidad maxima de que este en cada grupo
-
-            1/4 > 1/5 -- Falso
-            1/4 > 1/5 -- FAlso
-
-            Lo que significa que hay un maco y no es teoricamente aleatorio.
-
-
-
-        */
-
+            Assert.That(() => manager.GetRandomizedGroups(students, subjects, 300), Throws.ArgumentException.And.Message.EqualTo("La cantidad de grupos no puede ser mayor que la cantidad de estudiantes o de temas"));
+        }
 
         [Test]
         public void GroupManager_elements_with_no_remanent()
         {
+            List<string> subjects = new List<string>() { "c#", "java", "python", "c++", "julia", "ruby" };
             GroupManager manager = new GroupManager();
+            int numberOfGroups = 3;
 
-            List<string> elements = new List<string>()
-            {
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15"
-            };
+            Group[] groups = manager.GetRandomizedGroups(students, subjects, numberOfGroups);
 
-            int numberOfGroups = 5;
 
-            List<string>[] groups = manager.RandomizeGroups(elements, numberOfGroups);
-
-            Assert.That(groups.Select(group => group.Count), Is.All.EqualTo(3));
+            Assert.That(groups.Select(group => group.Students.Length), Is.All.EqualTo(2));
+            Assert.That(groups.Select(group => group.Subjects.Length), Is.All.EqualTo(2));
         }
 
         [Test]
         public void GroupManager_RandomizeGroups_elements_with_remanent()
         {
+
             GroupManager manager = new GroupManager();
-            int numberOfGroups = 5;
-            List<string> groups = new List<string>()
+            int numberOfGroups = 4;
+            // 2 grupos de 1 y 2 de 2
+            //1 de 2 y 3 de 1
+            int groupsOfOne = 0, groupsOfTwo = 0, groupsWithTwoSubjects = 0, groupsWithOneSubject = 0;
+
+
+            Group[] groups = manager.GetRandomizedGroups(students, subjects, numberOfGroups);
+
+            foreach (var group in groups)
             {
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15"
-            };
-            Assert.Pass();
-        }
-
-        [Test]
-        public void GroupManager_test_randomness()
-        {
-            int numberOfGroups = 3;
-            int numTests = 1000;
-            int probabilty = 1 / numberOfGroups;
-            Group[][] listasDeListasGrupos = group(numberOfGroups, numTests);
-
-            Stack<string> studentsStack = new Stack<string>();
-
-            foreach (var student in students)
-            {
-                studentsStack.Push(student);
-            }
-            //studentsCount = new int[numOfStudents]
-
-            //[[20,20,10],[16,16,18]]
-            //int[numStudents][]
-            //
-
-            int[][] studentGroupAppearancesCount = new int[students.Count][];
-
-
-
-            for (int i = 0; i < listasDeListasGrupos.Length; i++)
-            {
-                if (studentsStack.Count == 0)
+                if (group.Students.Length == 1)
                 {
-                    break;
+                    groupsOfOne++;
                 }
-                string currentStudent = studentsStack.Pop(); // Jonathan
-                int[] currentIntArrOfStudentGroupAppearancesCount = studentGroupAppearancesCount[i]; // Arrego de jonathan de veces aparecidas por grupo
-
-                Group[] listaDeGruposActual = listasDeListasGrupos[i]; // Lista de grupos a chequear aparecidas de Jonathan Actual
-
-                for (int j = 0; j < listaDeGruposActual.Length; j++)
+                else if (group.Students.Length == 2)
                 {
-                    Group currentGroup = listaDeGruposActual[j]; // Grupo 1
-                    string[] currentGroupStudents = currentGroup.Students; //Los estudiantes del grupo 1
+                    groupsOfTwo++;
+                }
 
-                    if (currentGroupStudents.Contains(currentStudent))
-                    {
-                        currentIntArrOfStudentGroupAppearancesCount[j]++; // Sumalo a la posicion del arreglo de contadas correspondiente al grupo 1
-                    }
+                if (group.Subjects.Length == 1)
+                {
+                    groupsWithOneSubject++;
+                }
+                else if (group.Subjects.Length == 2)
+                {
+                    groupsWithTwoSubjects++;
                 }
             }
-
-            foreach (var countAppearance in studentGroupAppearancesCount)
-            {
-                for (int i = 0; i < countAppearance.Length; i++)
-                {
-                    int countOfCurrentGroup = countAppearance[i];
-
-                    if (countOfCurrentGroup / numTests > probabilty)
-                    {
-                        Assert.Fail();
-                    }
-                }
-            }
-
-            Assert.Pass();
-            // Assert.That(listasDeListasGrupos.Select(listGroups => listGroups.Length), Is.All.EqualTo(numberOfGroups));
+            Assert.AreEqual(2, groupsOfOne);
+            Assert.AreEqual(2, groupsOfTwo);
+            Assert.AreEqual(3, groupsWithOneSubject);
+            Assert.AreEqual(1, groupsWithTwoSubjects);
         }
 
-        [Test]
-        public void GroupManager_RandomNumber()
-        {
-            GroupManager manager = new GroupManager();
-            Assert.Pass();
-        }
+
+        // [Test]
+        // public void GroupManager_test_randomness()
+        // {
+        //     int numberOfGroups = 3;
+        //     int numTests = 1000;
+        //     int probabilty = 1 / numberOfGroups;
+        //     Group[][] listasDeListasGrupos = group(numberOfGroups, numTests);
+
+        //     Stack<string> studentsStack = new Stack<string>();
+
+        //     foreach (var student in students)
+        //     {
+        //         studentsStack.Push(student);
+        //     }
+        //     //studentsCount = new int[numOfStudents]
+
+        //     //[[20,20,10],[16,16,18]]
+        //     //int[numStudents][]
+        //     //
+
+        //     int[][] studentGroupAppearancesCount = new int[students.Count][];
+
+        //     for (int i = 0; i < studentGroupAppearancesCount.Length; i++)
+        //     {
+        //         studentGroupAppearancesCount[i] = new int[numberOfGroups];
+        //     }
+
+        //     for (int i = 0; i < listasDeListasGrupos.Length; i++)
+        //     {
+        //         if (studentsStack.Count == 0)
+        //         {
+        //             break;
+        //         }
+        //         string currentStudent = studentsStack.Pop(); // Jonathan
+        //         int[] currentIntArrOfStudentGroupAppearancesCount = studentGroupAppearancesCount[i]; // Arrego de jonathan de veces aparecidas por grupo
+
+        //         Group[] listaDeGruposActual = listasDeListasGrupos[i]; // Lista de grupos a chequear aparecidas de Jonathan Actual
+
+        //         for (int j = 0; j < listaDeGruposActual.Length; j++)
+        //         {
+        //             Group currentGroup = listaDeGruposActual[j]; // Grupo 1
+        //             string[] currentGroupStudents = currentGroup.Students; //Los estudiantes del grupo 1
+
+        //             if (currentGroupStudents.Contains(currentStudent))
+        //             {
+        //                 currentIntArrOfStudentGroupAppearancesCount[j]++; // Sumalo a la posicion del arreglo de contadas correspondiente al grupo 1
+        //             }
+        //         }
+        //     }
+
+        //     foreach (var countAppearance in studentGroupAppearancesCount)
+        //     {
+        //         Assert.Fail();
+        //         for (int i = 0; i < countAppearance.Length; i++)
+        //         {
+        //             int countOfCurrentGroup = countAppearance[i];
+
+        //             if (countOfCurrentGroup / numTests > probabilty)
+        //             {
+        //                 Assert.Fail();
+        //             }
+        //         }
+        //     }
+        //     // Assert.Pass();
+        //     // Assert.That(listasDeListasGrupos.Select(listGroups => listGroups.Length), Is.All.EqualTo(numberOfGroups));
+        // }
     }
 }
 

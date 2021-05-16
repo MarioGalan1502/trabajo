@@ -11,7 +11,11 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/divisionDeGrupos/bin/Debug/netcoreapp3.1/divisionDeGrupos.dll",
-            "args": [],
+            "args": [
+                "300",
+                "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\bin\\Debug\\netcoreapp3.1\\estudiantes.txt",
+                "C:\\Users\\Samuel\\Desktop\\trabajo\\divisionDeGrupos\\bin\\Debug\\netcoreapp3.1\\temas.txt"
+            ],
             "cwd": "${workspaceFolder}/divisionDeGrupos",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
